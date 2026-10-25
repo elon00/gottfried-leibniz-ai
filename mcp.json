@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "gottfried-leibniz-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "LEIBNIZ",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "evaluate_leibniz_integral_rule",
+          "description": "Computes differentiation under integral sign for parameterized functional kernels",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "functional_form": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "functional_form"
+            ]
+          }
+        },
+        {
+          "name": "convert_binary_stepped_reckoner",
+          "description": "Executes digital base-2 arithmetic multiplication matrices for mechanical computing",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "operand_a": {
+                "type": "integer"
+              },
+              "operand_b": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "operand_a",
+              "operand_b"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
